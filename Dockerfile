@@ -1,11 +1,7 @@
-FROM golang:1.12 as builder
-
-ENV GOPATH=/go
-ENV GO111MODULE=on
+FROM golang:1.16 as builder
 
 RUN go get honnef.co/go/tools/cmd/staticcheck
 
-ENV GOFLAGS=-mod=vendor
 COPY . /go/src/github.com/bjhaid/node-labels-to-files
 WORKDIR /go/src/github.com/bjhaid/node-labels-to-files
 

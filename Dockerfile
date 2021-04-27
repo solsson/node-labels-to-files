@@ -12,3 +12,5 @@ RUN go test \
 FROM debian:buster-slim
 
 COPY --from=builder /usr/bin/node-labels-to-files /usr/bin/
+
+ENTRYPOINT ["/usr/bin/node-labels-to-files"]
